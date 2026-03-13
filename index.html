@@ -1,0 +1,173 @@
+```html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Tool Hub</title>
+
+<style>
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(135deg,#000000,#050505,#0d0d0d);
+color:white;
+text-align:center;
+overflow-y:auto;
+}
+
+/* tiêu đề */
+
+h1{
+margin-top:60px;
+font-size:42px;
+letter-spacing:2px;
+}
+
+/* khu vực nút */
+
+.container{
+margin-top:60px;
+position:relative;
+z-index:2;
+padding-bottom:200px;
+}
+
+/* nút */
+
+button{
+padding:15px 35px;
+margin:15px;
+border:none;
+border-radius:15px;
+font-size:18px;
+cursor:pointer;
+
+background:rgba(255,255,255,0.1);
+backdrop-filter: blur(10px);
+
+color:white;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+background:white;
+color:black;
+box-shadow:0 0 20px white;
+}
+
+/* phần download */
+
+h2{
+margin-top:50px;
+}
+
+/* hạt trắng bay */
+
+.particle{
+position:absolute;
+background:white;
+border-radius:50%;
+opacity:0.8;
+animation:float linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(0);
+opacity:1;
+}
+100%{
+transform:translateY(-1200px);
+opacity:0;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>⚡ Link của Tphat ⚡</h1>
+
+<div class="container">
+
+<button onclick="openSite('https://pastefy.app/ItwdTVKv/raw')">
+Red hub (Giao diện banana cat hub)
+</button>
+
+<button onclick="openSite('https://pastefy.app/XL6mXjyq/raw')">
+Trẩu Roblox V1
+</button>
+
+<button onclick="openSite('https://pastefy.app/SeDBeUfW/raw')">
+Script NatAov Hub + Script Bear Hub
+</button>
+
+<h2>Link download PC</h2>
+
+<button onclick="openSite('https://www.mediafire.com/file/rzs948nisulj50j/RonixInstaller_NEW.exe/file')">
+Ronix new
+</button>
+
+<button onclick="openSite('https://www.mediafire.com/file/0abry52yk688p0o/velocity2026.rar/file')">
+Velocity new
+</button>
+
+<h3>Mua script premium tại yukstore</h3>
+
+<button onclick="openSite('https://yukstore.com/?aff=44330')">
+Link mua key premium
+</button>
+
+<h4>Có vấn đề gì cứ hỏi tôi</h4>
+
+<button onclick="openSite('https://www.facebook.com/t.phat215')">
+Facebook của tôi
+<button onclick="openSite('https://www.tiktok.com/@winter22981')">
+Tiktok của tôi
+</button>
+
+</div>
+
+<script>
+
+function openSite(link){
+window.open(link,"_blank");
+}
+
+/* tạo hạt trắng bay */
+
+for(let i=0;i<40;i++){
+
+let p=document.createElement("div");
+p.className="particle";
+
+let size=Math.random()*6+2;
+
+p.style.width=size+"px";
+p.style.height=size+"px";
+
+p.style.left=Math.random()*100+"%";
+p.style.top=Math.random()*100+"%";
+
+p.style.animationDuration=(Math.random()*15+10)+"s";
+
+document.body.appendChild(p);
+
+}
+
+</script>
+
+</body>
+</html>
+```
+
+
+
+
