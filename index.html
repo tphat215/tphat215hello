@@ -1,11 +1,12 @@
+```html
 <!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
 <title>Tphat Hacker Hub</title>
 
-<!-- ICON -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
@@ -18,7 +19,7 @@ text-align:center;
 overflow-x:hidden;
 }
 
-/* matrix */
+/* MATRIX */
 
 #matrix{
 position:fixed;
@@ -27,7 +28,7 @@ left:0;
 z-index:0;
 }
 
-/* nội dung */
+/* MAIN */
 
 .main{
 position:relative;
@@ -41,70 +42,77 @@ from{opacity:0}
 to{opacity:1}
 }
 
-/* tiêu đề */
+/* TITLE */
 
 h1{
-
 font-size:45px;
-
 text-shadow:
 0 0 10px #00ff9d,
 0 0 30px #00ff9d,
 0 0 60px #00ff9d;
-
 animation:neon 2s infinite alternate;
-
 }
 
 @keyframes neon{
-
 from{
-text-shadow:
-0 0 10px #00ff9d,
-0 0 20px #00ff9d;
+text-shadow:0 0 10px #00ff9d;
 }
-
 to{
 text-shadow:
 0 0 20px #00ff9d,
 0 0 40px #00ff9d,
 0 0 80px #00ff9d;
 }
-
 }
 
-/* SCRIPT HACK */
+/* HACKER LOGO */
+
+.hacker-logo{
+width:120px;
+margin:20px;
+animation:spin 6s linear infinite;
+filter:drop-shadow(0 0 20px #00ff9d);
+}
+
+@keyframes spin{
+0%{transform:rotateY(0deg)}
+100%{transform:rotateY(360deg)}
+}
+
+/* TERMINAL */
+
+#terminal{
+color:#00ff9d;
+font-size:18px;
+margin-top:10px;
+height:30px;
+}
+
+/* SCRIPT */
 
 .script{
-
 font-size:28px;
 margin-top:10px;
 color:white;
-
 text-shadow:
 0 0 5px red,
 0 0 20px red,
 0 0 40px red;
-
 animation:glitch 1s infinite;
-
 }
 
 @keyframes glitch{
-
 0%{transform:translate(0)}
 20%{transform:translate(-2px,2px)}
 40%{transform:translate(-2px,-2px)}
 60%{transform:translate(2px,2px)}
 80%{transform:translate(2px,-2px)}
 100%{transform:translate(0)}
-
 }
 
 /* BUTTON */
 
 button{
-
 padding:16px 40px;
 margin:15px;
 border:none;
@@ -114,194 +122,118 @@ border-radius:14px;
 color:white;
 font-weight:bold;
 transition:0.35s;
-
 }
 
-/* script button */
+/* SCRIPT BUTTON */
 
 .btn-script{
-
 background:linear-gradient(45deg,#00ff9d,#00ffcc);
 box-shadow:0 0 10px #00ff9d,0 0 20px #00ff9d;
 color:black;
-
 }
 
 .btn-script:hover{
-
 transform:scale(1.1);
-
 box-shadow:
 0 0 20px #00ff9d,
 0 0 40px #00ff9d,
 0 0 80px #00ff9d;
-
 }
 
-/* download */
+/* DOWNLOAD */
 
 .btn-download{
-
 background:linear-gradient(45deg,#009dff,#00d4ff);
-
 box-shadow:0 0 10px #009dff;
-
 }
 
 .btn-download:hover{
-
 transform:scale(1.1);
-
 box-shadow:
 0 0 20px #009dff,
 0 0 40px #009dff,
 0 0 80px #009dff;
-
 }
 
-/* premium */
+/* PREMIUM */
 
 .btn-premium{
-
 background:linear-gradient(45deg,#ff00cc,#9933ff);
-
 box-shadow:0 0 10px #ff00cc;
-
 }
 
 .btn-premium:hover{
-
 transform:scale(1.1);
-
 box-shadow:
 0 0 20px #ff00cc,
 0 0 40px #ff00cc,
 0 0 80px #ff00cc;
-
 }
 
 /* SOCIAL */
 
 .social button{
-
 width:200px;
-
 }
-
-/* facebook */
 
 .btn-facebook{
-
 background:#1877f2;
 box-shadow:0 0 20px #1877f2;
-
 }
-
-.btn-facebook:hover{
-
-transform:scale(1.1);
-
-box-shadow:
-0 0 20px #1877f2,
-0 0 40px #1877f2;
-
-}
-
-/* tiktok */
 
 .btn-tiktok{
-
 background:#000;
 border:1px solid white;
 box-shadow:0 0 20px white;
-
 }
-
-.btn-tiktok:hover{
-
-transform:scale(1.1);
-
-background:white;
-color:black;
-
-}
-
-/* discord */
 
 .btn-discord{
-
 background:#5865F2;
 box-shadow:0 0 20px #5865F2;
-
 }
 
-.btn-discord:hover{
+/* COUNTER */
 
-transform:scale(1.1);
-
-box-shadow:
-0 0 20px #5865F2,
-0 0 40px #5865F2,
-0 0 80px #5865F2;
-
+.counter{
+margin-top:20px;
+font-size:18px;
 }
 
-/* loading */
+/* LOADING */
 
 #loading{
-
 position:fixed;
 top:0;
 left:0;
-
 width:100%;
 height:100%;
-
 background:black;
-
 display:none;
-
 align-items:center;
 justify-content:center;
-
 z-index:999;
-
 }
 
 .box{
-
 border:1px solid #00ff9d;
-
 padding:40px;
-
 border-radius:10px;
-
 width:300px;
-
 }
 
 .progress{
-
 width:100%;
 height:10px;
-
 background:#111;
-
 margin-top:20px;
-
 border-radius:10px;
-
 overflow:hidden;
-
 }
 
 #bar{
-
 height:100%;
 width:0%;
-
 background:#00ff9d;
-
 }
 
 </style>
@@ -309,41 +241,46 @@ background:#00ff9d;
 
 <body>
 
+<audio autoplay loop>
+<source src="hacker.mp3" type="audio/mpeg">
+</audio>
+
 <canvas id="matrix"></canvas>
 
 <div class="main">
 
 <h1>⚡ Link của Tphat ⚡</h1>
 
+<img src="hacker.png" class="hacker-logo">
+
+<p id="terminal"></p>
+
 <div class="script">SCRIPT HACK</div>
 
 <br>
 
-<button class="btn-script" onclick="go('https://pastefy.app/ItwdTVKv/raw')">
-🔥 Red hub
+<button class="btn-script" onclick="go('https://pastefy.app/ItwdTVKv/raw')">🔥 Red hub</button>
+
+<button class="btn-script" onclick="go('https://pastefy.app/XL6mXjyq/raw')">🔥 Trẩu Roblox</button>
+
+<button class="btn-script" onclick="go('https://pastefy.app/SeDBeUfW/raw')">🔥 NatAov + Bear</button>
+
+<h2>⚡ DOWNLOAD PC⚡</h2>
+
+<button class="btn-download"
+onclick="go('https://www.mediafire.com/file/rzs948nisulj50j/RonixInstaller_NEW.exe/file')">
+Ronix
 </button>
 
-<button class="btn-script" onclick="go('https://pastefy.app/XL6mXjyq/raw')">
-🔥 Trẩu Roblox
-</button>
-
-<button class="btn-script" onclick="go('https://pastefy.app/SeDBeUfW/raw')">
-🔥 NatAov + Bear
-</button>
-
-<h2>⚡ DOWNLOAD TOOL ⚡</h2>
-
-<button class="btn-download" onclick="go('https://www.mediafire.com/file/rzs948nisulj50j/RonixInstaller_NEW.exe/file')">
-⬇ Ronix
-</button>
-
-<button class="btn-download" onclick="go('https://www.mediafire.com/file/0abry52yk688p0o/velocity2026.rar/file')">
-⬇ Velocity
+<button class="btn-download"
+onclick="go('https://www.mediafire.com/file/0abry52yk688p0o/velocity2026.rar/file')">
+Velocity
 </button>
 
 <h2>💎 SCRIPT PREMIUM 💎</h2>
 
-<button class="btn-premium" onclick="go('https://yukstore.com/?aff=44330')">
+<button class="btn-premium"
+onclick="go('https://yukstore.com/?aff=44330')">
 💎 Mua key premium
 </button>
 
@@ -353,18 +290,25 @@ background:#00ff9d;
 
 <div class="social">
 
-<button class="btn-facebook" onclick="go('https://www.facebook.com/t.phat215')">
+<button class="btn-facebook"
+onclick="go('https://www.facebook.com/t.phat215')">
 <i class="fab fa-facebook"></i> Facebook
 </button>
 
-<button class="btn-tiktok" onclick="go('https://www.tiktok.com/@winter22981')">
+<button class="btn-tiktok"
+onclick="go('https://www.tiktok.com/@winter22981')">
 <i class="fab fa-tiktok"></i> TikTok
 </button>
 
-<button class="btn-discord" onclick="go('https://discord.com')">
+<button class="btn-discord"
+onclick="go('https://discord.com')">
 <i class="fab fa-discord"></i> Discord
 </button>
 
+</div>
+
+<div class="counter">
+Lượt truy cập: <span id="views">0</span>
 </div>
 
 </div>
@@ -378,9 +322,7 @@ background:#00ff9d;
 <p>Vui lòng đợi <span id="time">5</span>s</p>
 
 <div class="progress">
-
 <div id="bar"></div>
-
 </div>
 
 </div>
@@ -389,27 +331,37 @@ background:#00ff9d;
 
 <script>
 
-/* MATRIX */
+/* TERMINAL */
 
-let canvas=document.getElementById("matrix");
-let ctx=canvas.getContext("2d");
+let text="Accessing Tphat Hacker Hub...";
+let i=0;
+
+function type(){
+if(i<text.length){
+document.getElementById("terminal").innerHTML+=text.charAt(i);
+i++;
+setTimeout(type,40);
+}
+}
+
+type();
+
+/* MATRIX SMOOTH */
+
+const canvas=document.getElementById("matrix");
+const ctx=canvas.getContext("2d");
 
 canvas.height=window.innerHeight;
 canvas.width=window.innerWidth;
 
-let letters="01".split("");
-let fontSize=14;
-
-let columns=canvas.width/fontSize;
-
-let drops=[];
-
-for(let x=0;x<columns;x++)
-drops[x]=1;
+const letters="アカサタナハマヤラワ0123456789";
+const fontSize=16;
+const columns=canvas.width/fontSize;
+const drops=Array(Math.floor(columns)).fill(1);
 
 function draw(){
 
-ctx.fillStyle="rgba(0,0,0,0.05)";
+ctx.fillStyle="rgba(0,0,0,0.08)";
 ctx.fillRect(0,0,canvas.width,canvas.height);
 
 ctx.fillStyle="#0f0";
@@ -417,20 +369,31 @@ ctx.font=fontSize+"px monospace";
 
 for(let i=0;i<drops.length;i++){
 
-let text=letters[Math.floor(Math.random()*letters.length)];
+const text=letters[Math.floor(Math.random()*letters.length)];
 
 ctx.fillText(text,i*fontSize,drops[i]*fontSize);
 
-if(drops[i]*fontSize>canvas.height && Math.random()>0.975)
+if(drops[i]*fontSize>canvas.height && Math.random()>0.975){
 drops[i]=0;
+}
 
 drops[i]++;
 
 }
 
+requestAnimationFrame(draw);
+
 }
 
-setInterval(draw,33);
+draw();
+
+/* COUNTER */
+
+let views=localStorage.getItem("views");
+if(!views){views=0;}
+views++;
+localStorage.setItem("views",views);
+document.getElementById("views").innerText=views;
 
 /* LINK */
 
@@ -451,15 +414,10 @@ t--;
 time.innerText=t;
 
 if(t<=0){
-
 clearInterval(timer);
-
 window.open(link,"_blank");
-
 load.style.display="none";
-
 bar.style.width="0%";
-
 }
 
 },1000);
@@ -467,7 +425,6 @@ bar.style.width="0%";
 let progress=setInterval(()=>{
 
 p+=2;
-
 bar.style.width=p+"%";
 
 if(p>=100) clearInterval(progress);
@@ -480,6 +437,9 @@ if(p>=100) clearInterval(progress);
 
 </body>
 </html>
+```
+
+
 
 
 
