@@ -1,91 +1,239 @@
-```html
 <!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<title>Tool Hub</title>
+<title>Tphat Hacker Hub</title>
 
 <style>
 
-html{
-scroll-behavior:smooth;
-}
-
 body{
 margin:0;
-font-family:Arial;
-background:linear-gradient(135deg,#000000,#050505,#0d0d0d);
-color:white;
+background:black;
+color:#00ff9d;
+font-family:Consolas,monospace;
 text-align:center;
-overflow-y:auto;
+overflow-x:hidden;
+}
+
+/* matrix nền */
+
+#matrix{
+position:fixed;
+top:0;
+left:0;
+z-index:0;
+}
+
+/* nội dung */
+
+.main{
+position:relative;
+z-index:2;
+margin-top:80px;
 }
 
 /* tiêu đề */
 
 h1{
-margin-top:60px;
 font-size:42px;
-letter-spacing:2px;
+text-shadow:
+0 0 10px #00ff9d,
+0 0 25px #00ff9d,
+0 0 40px #00ff9d;
 }
 
-/* khu vực nút */
+/* SCRIPT HACK */
 
-.container{
-margin-top:60px;
+.script{
+font-size:26px;
+margin-top:10px;
 position:relative;
-z-index:2;
-padding-bottom:200px;
 }
 
-/* nút */
+.script::before,
+.script::after{
+content:"SCRIPT HACK";
+position:absolute;
+left:0;
+right:0;
+}
+
+.script::before{
+color:red;
+animation:glitch1 1s infinite;
+}
+
+.script::after{
+color:cyan;
+animation:glitch2 1s infinite;
+}
+
+@keyframes glitch1{
+0%{transform:translate(0)}
+20%{transform:translate(-2px,2px)}
+40%{transform:translate(-2px,-2px)}
+60%{transform:translate(2px,2px)}
+80%{transform:translate(2px,-2px)}
+100%{transform:translate(0)}
+}
+
+@keyframes glitch2{
+0%{transform:translate(0)}
+20%{transform:translate(2px,-2px)}
+40%{transform:translate(2px,2px)}
+60%{transform:translate(-2px,-2px)}
+80%{transform:translate(-2px,2px)}
+100%{transform:translate(0)}
+}
+
+/* nút chung */
 
 button{
-padding:15px 35px;
+
+padding:16px 40px;
 margin:15px;
 border:none;
-border-radius:15px;
-font-size:18px;
+font-size:17px;
 cursor:pointer;
-
-background:rgba(255,255,255,0.1);
-backdrop-filter: blur(10px);
-
+border-radius:14px;
 color:white;
-transition:0.3s;
+font-weight:bold;
+transition:0.35s;
+
 }
 
-button:hover{
+/* SCRIPT */
+
+.btn-script{
+
+background:linear-gradient(45deg,#00ff9d,#00ffcc);
+box-shadow:0 0 10px #00ff9d,0 0 20px #00ff9d;
+color:black;
+
+}
+
+.btn-script:hover{
+
+transform:scale(1.1);
+box-shadow:
+0 0 20px #00ff9d,
+0 0 40px #00ff9d,
+0 0 60px #00ff9d;
+
+}
+
+/* DOWNLOAD */
+
+.btn-download{
+
+background:linear-gradient(45deg,#009dff,#00d4ff);
+box-shadow:0 0 10px #009dff,0 0 20px #009dff;
+
+}
+
+.btn-download:hover{
+
+transform:scale(1.1);
+box-shadow:
+0 0 20px #009dff,
+0 0 40px #009dff,
+0 0 60px #009dff;
+
+}
+
+/* PREMIUM */
+
+.btn-premium{
+
+background:linear-gradient(45deg,#ff00cc,#9933ff);
+box-shadow:0 0 10px #ff00cc,0 0 20px #ff00cc;
+
+}
+
+.btn-premium:hover{
+
+transform:scale(1.1);
+box-shadow:
+0 0 20px #ff00cc,
+0 0 40px #ff00cc,
+0 0 60px #ff00cc;
+
+}
+
+/* FACEBOOK */
+
+.btn-facebook{
+
+background:#1877f2;
+box-shadow:0 0 20px #1877f2;
+
+}
+
+.btn-facebook:hover{
+
+transform:scale(1.1);
+box-shadow:
+0 0 20px #1877f2,
+0 0 40px #1877f2;
+
+}
+
+/* TIKTOK */
+
+.btn-tiktok{
+
+background:#111;
+border:1px solid white;
+box-shadow:0 0 10px white;
+
+}
+
+.btn-tiktok:hover{
+
 transform:scale(1.1);
 background:white;
 color:black;
-box-shadow:0 0 20px white;
+box-shadow:
+0 0 20px white,
+0 0 40px white;
+
 }
 
-/* phần download */
+/* loading */
 
-h2{
-margin-top:50px;
+#loading{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:black;
+display:none;
+align-items:center;
+justify-content:center;
+z-index:999;
 }
 
-/* hạt trắng bay */
-
-.particle{
-position:absolute;
-background:white;
-border-radius:50%;
-opacity:0.8;
-animation:float linear infinite;
+.box{
+border:1px solid #00ff9d;
+padding:40px;
+border-radius:10px;
+width:300px;
 }
 
-@keyframes float{
-0%{
-transform:translateY(0);
-opacity:1;
+.progress{
+width:100%;
+height:10px;
+background:#111;
+margin-top:20px;
+border-radius:10px;
+overflow:hidden;
 }
-100%{
-transform:translateY(-1200px);
-opacity:0;
-}
+
+#bar{
+height:100%;
+width:0%;
+background:#00ff9d;
 }
 
 </style>
@@ -93,72 +241,152 @@ opacity:0;
 
 <body>
 
+<canvas id="matrix"></canvas>
+
+<div class="main">
+
 <h1>⚡ Link của Tphat ⚡</h1>
+<div class="script">SCRIPT HACK</div>
 
-<div class="container">
+<br>
 
-<button onclick="openSite('https://pastefy.app/ItwdTVKv/raw')">
-Red hub (Giao diện banana cat hub)
+<button class="btn-script" onclick="go('https://pastefy.app/ItwdTVKv/raw')">
+Red hub (banana cat hub)
 </button>
 
-<button onclick="openSite('https://pastefy.app/XL6mXjyq/raw')">
+<button class="btn-script" onclick="go('https://pastefy.app/XL6mXjyq/raw')">
 Trẩu Roblox V1
 </button>
 
-<button onclick="openSite('https://pastefy.app/SeDBeUfW/raw')">
-Script NatAov Hub + Script Bear Hub
+<button class="btn-script" onclick="go('https://pastefy.app/SeDBeUfW/raw')">
+Script NatAov + Bear Hub
 </button>
 
-<h2>Link download PC</h2>
+<h2>⚡ DOWNLOAD TOOL ⚡</h2>
 
-<button onclick="openSite('https://www.mediafire.com/file/rzs948nisulj50j/RonixInstaller_NEW.exe/file')">
+<button class="btn-download" onclick="go('https://www.mediafire.com/file/rzs948nisulj50j/RonixInstaller_NEW.exe/file')">
 Ronix new
 </button>
 
-<button onclick="openSite('https://www.mediafire.com/file/0abry52yk688p0o/velocity2026.rar/file')">
+<button class="btn-download" onclick="go('https://www.mediafire.com/file/0abry52yk688p0o/velocity2026.rar/file')">
 Velocity new
 </button>
 
-<h3>Mua script premium tại yukstore</h3>
+<h2>💎 SCRIPT PREMIUM 💎</h2>
 
-<button onclick="openSite('https://yukstore.com/?aff=44330')">
-Link mua key premium
+<button class="btn-premium" onclick="go('https://yukstore.com/?aff=44330')">
+Mua key premium
 </button>
 
-<h4>Có vấn đề gì cứ hỏi tôi</h4>
+<br><br>
 
-<button onclick="openSite('https://www.facebook.com/t.phat215')">
-Facebook của tôi
-<button onclick="openSite('https://www.tiktok.com/@winter22981')">
-Tiktok của tôi
+<button class="btn-facebook" onclick="go('https://www.facebook.com/t.phat215')">
+Facebook
 </button>
+
+<button class="btn-tiktok" onclick="go('https://www.tiktok.com/@winter22981')">
+Tiktok
+</button>
+
+</div>
+
+<div id="loading">
+
+<div class="box">
+
+<h2>Đang chuyển link...</h2>
+<p>Vui lòng đợi <span id="time">5</span>s</p>
+
+<div class="progress">
+<div id="bar"></div>
+</div>
+
+</div>
 
 </div>
 
 <script>
 
-function openSite(link){
-window.open(link,"_blank");
+/* MATRIX */
+
+let canvas=document.getElementById("matrix");
+let ctx=canvas.getContext("2d");
+
+canvas.height=window.innerHeight;
+canvas.width=window.innerWidth;
+
+let letters="01".split("");
+let fontSize=14;
+let columns=canvas.width/fontSize;
+
+let drops=[];
+
+for(let x=0;x<columns;x++)
+drops[x]=1;
+
+function draw(){
+
+ctx.fillStyle="rgba(0,0,0,0.05)";
+ctx.fillRect(0,0,canvas.width,canvas.height);
+
+ctx.fillStyle="#0f0";
+ctx.font=fontSize+"px monospace";
+
+for(let i=0;i<drops.length;i++){
+
+let text=letters[Math.floor(Math.random()*letters.length)];
+
+ctx.fillText(text,i*fontSize,drops[i]*fontSize);
+
+if(drops[i]*fontSize>canvas.height && Math.random()>0.975)
+drops[i]=0;
+
+drops[i]++;
+
 }
 
-/* tạo hạt trắng bay */
+}
 
-for(let i=0;i<40;i++){
+setInterval(draw,33);
 
-let p=document.createElement("div");
-p.className="particle";
+/* chuyển link */
 
-let size=Math.random()*6+2;
+function go(link){
 
-p.style.width=size+"px";
-p.style.height=size+"px";
+let load=document.getElementById("loading");
+let bar=document.getElementById("bar");
+let time=document.getElementById("time");
 
-p.style.left=Math.random()*100+"%";
-p.style.top=Math.random()*100+"%";
+load.style.display="flex";
 
-p.style.animationDuration=(Math.random()*15+10)+"s";
+let t=5;
+let p=0;
 
-document.body.appendChild(p);
+let timer=setInterval(()=>{
+
+t--;
+time.innerText=t;
+
+if(t<=0){
+
+clearInterval(timer);
+window.open(link,"_blank");
+
+load.style.display="none";
+bar.style.width="0%";
+
+}
+
+},1000);
+
+let progress=setInterval(()=>{
+
+p+=2;
+bar.style.width=p+"%";
+
+if(p>=100) clearInterval(progress);
+
+},100);
 
 }
 
@@ -166,8 +394,6 @@ document.body.appendChild(p);
 
 </body>
 </html>
-```
-
 
 
 
