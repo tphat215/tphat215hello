@@ -1,12 +1,10 @@
-```html
 <!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
 <title>Tphat Hacker Hub</title>
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 
@@ -19,7 +17,7 @@ text-align:center;
 overflow-x:hidden;
 }
 
-/* MATRIX */
+/* matrix */
 
 #matrix{
 position:fixed;
@@ -28,80 +26,51 @@ left:0;
 z-index:0;
 }
 
-/* MAIN */
+/* nội dung */
 
 .main{
 position:relative;
 z-index:2;
 margin-top:80px;
-animation:fade 2s;
 }
 
-@keyframes fade{
-from{opacity:0}
-to{opacity:1}
-}
-
-/* TITLE */
+/* tiêu đề */
 
 h1{
-font-size:45px;
+font-size:42px;
 text-shadow:
 0 0 10px #00ff9d,
-0 0 30px #00ff9d,
-0 0 60px #00ff9d;
-animation:neon 2s infinite alternate;
+0 0 25px #00ff9d,
+0 0 40px #00ff9d;
 }
 
-@keyframes neon{
-from{
-text-shadow:0 0 10px #00ff9d;
-}
-to{
-text-shadow:
-0 0 20px #00ff9d,
-0 0 40px #00ff9d,
-0 0 80px #00ff9d;
-}
-}
-
-/* HACKER LOGO */
-
-.hacker-logo{
-width:120px;
-margin:20px;
-animation:spin 6s linear infinite;
-filter:drop-shadow(0 0 20px #00ff9d);
-}
-
-@keyframes spin{
-0%{transform:rotateY(0deg)}
-100%{transform:rotateY(360deg)}
-}
-
-/* TERMINAL */
-
-#terminal{
-color:#00ff9d;
-font-size:18px;
-margin-top:10px;
-height:30px;
-}
-
-/* SCRIPT */
+/* script hack */
 
 .script{
-font-size:28px;
+font-size:26px;
 margin-top:10px;
-color:white;
-text-shadow:
-0 0 5px red,
-0 0 20px red,
-0 0 40px red;
-animation:glitch 1s infinite;
+position:relative;
 }
 
-@keyframes glitch{
+.script::before,
+.script::after{
+content:"SCRIPT HACK";
+position:absolute;
+left:0;
+right:0;
+}
+
+.script::before{
+color:red;
+animation:glitch1 1s infinite;
+}
+
+.script::after{
+color:cyan;
+animation:glitch2 1s infinite;
+}
+
+@keyframes glitch1{
 0%{transform:translate(0)}
 20%{transform:translate(-2px,2px)}
 40%{transform:translate(-2px,-2px)}
@@ -110,7 +79,16 @@ animation:glitch 1s infinite;
 100%{transform:translate(0)}
 }
 
-/* BUTTON */
+@keyframes glitch2{
+0%{transform:translate(0)}
+20%{transform:translate(2px,-2px)}
+40%{transform:translate(2px,2px)}
+60%{transform:translate(-2px,-2px)}
+80%{transform:translate(-2px,2px)}
+100%{transform:translate(0)}
+}
+
+/* nút */
 
 button{
 padding:16px 40px;
@@ -124,7 +102,11 @@ font-weight:bold;
 transition:0.35s;
 }
 
-/* SCRIPT BUTTON */
+button i{
+margin-right:8px;
+}
+
+/* script */
 
 .btn-script{
 background:linear-gradient(45deg,#00ff9d,#00ffcc);
@@ -137,14 +119,14 @@ transform:scale(1.1);
 box-shadow:
 0 0 20px #00ff9d,
 0 0 40px #00ff9d,
-0 0 80px #00ff9d;
+0 0 60px #00ff9d;
 }
 
-/* DOWNLOAD */
+/* download */
 
 .btn-download{
 background:linear-gradient(45deg,#009dff,#00d4ff);
-box-shadow:0 0 10px #009dff;
+box-shadow:0 0 10px #009dff,0 0 20px #009dff;
 }
 
 .btn-download:hover{
@@ -152,14 +134,14 @@ transform:scale(1.1);
 box-shadow:
 0 0 20px #009dff,
 0 0 40px #009dff,
-0 0 80px #009dff;
+0 0 60px #009dff;
 }
 
-/* PREMIUM */
+/* premium */
 
 .btn-premium{
 background:linear-gradient(45deg,#ff00cc,#9933ff);
-box-shadow:0 0 10px #ff00cc;
+box-shadow:0 0 10px #ff00cc,0 0 20px #ff00cc;
 }
 
 .btn-premium:hover{
@@ -167,39 +149,55 @@ transform:scale(1.1);
 box-shadow:
 0 0 20px #ff00cc,
 0 0 40px #ff00cc,
-0 0 80px #ff00cc;
+0 0 60px #ff00cc;
 }
 
-/* SOCIAL */
-
-.social button{
-width:200px;
-}
+/* facebook */
 
 .btn-facebook{
 background:#1877f2;
 box-shadow:0 0 20px #1877f2;
 }
 
-.btn-tiktok{
-background:#000;
-border:1px solid white;
-box-shadow:0 0 20px white;
+.btn-facebook:hover{
+transform:scale(1.1);
+box-shadow:
+0 0 20px #1877f2,
+0 0 40px #1877f2;
 }
+
+/* tiktok */
+
+.btn-tiktok{
+background:#111;
+border:1px solid white;
+box-shadow:0 0 10px white;
+}
+
+.btn-tiktok:hover{
+transform:scale(1.1);
+background:white;
+color:black;
+box-shadow:
+0 0 20px white,
+0 0 40px white;
+}
+
+/* discord */
 
 .btn-discord{
 background:#5865F2;
-box-shadow:0 0 20px #5865F2;
+box-shadow:0 0 15px #5865F2;
 }
 
-/* COUNTER */
-
-.counter{
-margin-top:20px;
-font-size:18px;
+.btn-discord:hover{
+transform:scale(1.1);
+box-shadow:
+0 0 20px #5865F2,
+0 0 40px #5865F2;
 }
 
-/* LOADING */
+/* loading */
 
 #loading{
 position:fixed;
@@ -241,75 +239,56 @@ background:#00ff9d;
 
 <body>
 
-<audio autoplay loop>
-<source src="hacker.mp3" type="audio/mpeg">
-</audio>
-
 <canvas id="matrix"></canvas>
 
 <div class="main">
 
 <h1>⚡ Link của Tphat ⚡</h1>
-
-<img src="hacker.png" class="hacker-logo">
-
-<p id="terminal"></p>
-
 <div class="script">SCRIPT HACK</div>
 
 <br>
 
-<button class="btn-script" onclick="go('https://pastefy.app/ItwdTVKv/raw')">🔥 Red hub</button>
-
-<button class="btn-script" onclick="go('https://pastefy.app/XL6mXjyq/raw')">🔥 Trẩu Roblox</button>
-
-<button class="btn-script" onclick="go('https://pastefy.app/SeDBeUfW/raw')">🔥 NatAov + Bear</button>
-
-<h2>⚡ DOWNLOAD PC⚡</h2>
-
-<button class="btn-download"
-onclick="go('https://www.mediafire.com/file/rzs948nisulj50j/RonixInstaller_NEW.exe/file')">
-Ronix
+<button class="btn-script" onclick="go('https://pastefy.app/ItwdTVKv/raw')">
+Red hub
 </button>
 
-<button class="btn-download"
-onclick="go('https://www.mediafire.com/file/0abry52yk688p0o/velocity2026.rar/file')">
-Velocity
+<button class="btn-script" onclick="go('https://pastefy.app/XL6mXjyq/raw')">
+Trẩu Roblox V1
+</button>
+
+<button class="btn-script" onclick="go('https://pastefy.app/SeDBeUfW/raw')">
+NatAov + Bear Hub
+</button>
+
+<h2>⚡ DOWNLOAD TOOL ⚡</h2>
+
+<button class="btn-download" onclick="go('https://www.mediafire.com/file/rzs948nisulj50j/RonixInstaller_NEW.exe/file')">
+Ronix new
+</button>
+
+<button class="btn-download" onclick="go('https://www.mediafire.com/file/0abry52yk688p0o/velocity2026.rar/file')">
+Velocity new
 </button>
 
 <h2>💎 SCRIPT PREMIUM 💎</h2>
 
-<button class="btn-premium"
-onclick="go('https://yukstore.com/?aff=44330')">
-💎 Mua key premium
+<button class="btn-premium" onclick="go('https://yukstore.com/?aff=44330')">
+Mua key premium
 </button>
 
 <br><br>
 
-<h3>Trang cá nhân của tôi</h3>
-
-<div class="social">
-
-<button class="btn-facebook"
-onclick="go('https://www.facebook.com/t.phat215')">
-<i class="fab fa-facebook"></i> Facebook
+<button class="btn-facebook" onclick="go('https://www.facebook.com/t.phat215')">
+<i class="fa-brands fa-facebook"></i> Facebook
 </button>
 
-<button class="btn-tiktok"
-onclick="go('https://www.tiktok.com/@winter22981')">
-<i class="fab fa-tiktok"></i> TikTok
+<button class="btn-tiktok" onclick="go('https://www.tiktok.com/@winter22981')">
+<i class="fa-brands fa-tiktok"></i> TikTok
 </button>
 
-<button class="btn-discord"
-onclick="go('https://discord.com')">
-<i class="fab fa-discord"></i> Discord
+<button class="btn-discord" onclick="go('https://discord.com')">
+<i class="fa-brands fa-discord"></i> Discord
 </button>
-
-</div>
-
-<div class="counter">
-Lượt truy cập: <span id="views">0</span>
-</div>
 
 </div>
 
@@ -318,7 +297,6 @@ Lượt truy cập: <span id="views">0</span>
 <div class="box">
 
 <h2>Đang chuyển link...</h2>
-
 <p>Vui lòng đợi <span id="time">5</span>s</p>
 
 <div class="progress">
@@ -331,37 +309,26 @@ Lượt truy cập: <span id="views">0</span>
 
 <script>
 
-/* TERMINAL */
+/* MATRIX */
 
-let text="Accessing Tphat Hacker Hub...";
-let i=0;
-
-function type(){
-if(i<text.length){
-document.getElementById("terminal").innerHTML+=text.charAt(i);
-i++;
-setTimeout(type,40);
-}
-}
-
-type();
-
-/* MATRIX SMOOTH */
-
-const canvas=document.getElementById("matrix");
-const ctx=canvas.getContext("2d");
+let canvas=document.getElementById("matrix");
+let ctx=canvas.getContext("2d");
 
 canvas.height=window.innerHeight;
 canvas.width=window.innerWidth;
 
-const letters="アカサタナハマヤラワ0123456789";
-const fontSize=16;
-const columns=canvas.width/fontSize;
-const drops=Array(Math.floor(columns)).fill(1);
+let letters="01".split("");
+let fontSize=14;
+let columns=canvas.width/fontSize;
+
+let drops=[];
+
+for(let x=0;x<columns;x++)
+drops[x]=1;
 
 function draw(){
 
-ctx.fillStyle="rgba(0,0,0,0.08)";
+ctx.fillStyle="rgba(0,0,0,0.05)";
 ctx.fillRect(0,0,canvas.width,canvas.height);
 
 ctx.fillStyle="#0f0";
@@ -369,33 +336,22 @@ ctx.font=fontSize+"px monospace";
 
 for(let i=0;i<drops.length;i++){
 
-const text=letters[Math.floor(Math.random()*letters.length)];
+let text=letters[Math.floor(Math.random()*letters.length)];
 
 ctx.fillText(text,i*fontSize,drops[i]*fontSize);
 
-if(drops[i]*fontSize>canvas.height && Math.random()>0.975){
+if(drops[i]*fontSize>canvas.height && Math.random()>0.975)
 drops[i]=0;
-}
 
 drops[i]++;
 
 }
 
-requestAnimationFrame(draw);
-
 }
 
-draw();
+setInterval(draw,33);
 
-/* COUNTER */
-
-let views=localStorage.getItem("views");
-if(!views){views=0;}
-views++;
-localStorage.setItem("views",views);
-document.getElementById("views").innerText=views;
-
-/* LINK */
+/* chuyển link */
 
 function go(link){
 
@@ -414,10 +370,13 @@ t--;
 time.innerText=t;
 
 if(t<=0){
+
 clearInterval(timer);
 window.open(link,"_blank");
+
 load.style.display="none";
 bar.style.width="0%";
+
 }
 
 },1000);
@@ -437,7 +396,11 @@ if(p>=100) clearInterval(progress);
 
 </body>
 </html>
-```
+
+
+
+
+
 
 
 
